@@ -2,13 +2,13 @@
 ## By MiW CryptoCurrency, Jan 3rd 2015 ##
 
 ## Update ##
-Jan 04 2015
+### Jan 04 2015 ###
 The exact change where the curves were removed is in this change.
 bug 335748 ECC support for Mozilla.
 https://bugzilla.mozilla.org/show_bug.cgi?id=335748
 https://github.com/ehsan/mozilla-cvs-history/commit/80afd702687e20643b183ca05e96236e8eb48a4e
 
-NSS is currently developed on mercurial, so prior change history was lost. The above github export contains all CVS changes, and shows where rrelyea%redhat.com checked in a copy of ecl-curve.h that was missing the parameters.
+NSS is currently developed on mercurial, so prior change history was lost. The above CVS export contains file change history, and shows where rrelyea%redhat.com checked in a copy of ecl-curve.h that was missing the parameters.
 
  Julien Pierre rightly identified at 2006-06-26 17:31:28 PDT 
 
@@ -19,7 +19,6 @@ NSS is currently developed on mercurial, so prior change history was lost. The a
 Robert Relyea 2006-08-31 09:44:10 PDT
 
 > "Nope, mozilla is shipping with this."
-
 
 and we still have an NSS that cannot support anything other than suite-b until the params are restored.
 
