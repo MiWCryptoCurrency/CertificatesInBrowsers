@@ -3,10 +3,9 @@
 
 ## Update ##
 ### Jan 04 2015 ###
-The exact change where the curves were removed is in this change.
-bug 335748 ECC support for Mozilla.
-https://bugzilla.mozilla.org/show_bug.cgi?id=335748
-https://github.com/ehsan/mozilla-cvs-history/commit/80afd702687e20643b183ca05e96236e8eb48a4e
+The exact change where the curves were removed is documented in:
+* [bug 335748 ECC support for Mozilla.](https://bugzilla.mozilla.org/show_bug.cgi?id=335748)
+* [CVS export of code change on github](https://github.com/ehsan/mozilla-cvs-history/commit/80afd702687e20643b183ca05e96236e8eb48a4e)
 
 NSS is currently developed on mercurial, so prior change history was lost. The above CVS export contains file change history, and shows where rrelyea%redhat.com checked in a copy of ecl-curve.h that was missing the parameters.
 
@@ -16,6 +15,10 @@ NSS is currently developed on mercurial, so prior change history was lost. The a
 > intensely dislike the solution chosen for the NSS 3.11/3.11.1 branches to have two different checkout points for 
 > this source file. If anything, that hack should be temporary, and should not be perpetuated to the trunk.
 
+2006-08-30 17:57:59 PDT 
+
+> Bob, is there any work left to do on this bug ? If not, please close it, since it is P1.
+
 Robert Relyea 2006-08-31 09:44:10 PDT
 
 > "Nope, mozilla is shipping with this."
@@ -23,7 +26,8 @@ Robert Relyea 2006-08-31 09:44:10 PDT
 and we still have an NSS that cannot support anything other than suite-b until the params are restored.
 
 Mozilla Bugzilla Bug [Case of the missing curves in Firefox] (https://bugzilla.mozilla.org/show_bug.cgi?id=1117297)
- 
+
+
 ## TL;DR ##
 
 NSS 3.17.3 contains a logic error that causes the 'ssl3_SuiteBOnly' function to always return TRUE -- it is testing for support for keys smaller than minimum allowed.
