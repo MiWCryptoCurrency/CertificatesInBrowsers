@@ -1,10 +1,34 @@
 # Case of the missing curves in Firefox #
 ## By MiW CryptoCurrency, Jan 3rd 2015 ##
 
+## Update ##
+Jan 04 2015
+The exact change where the curves were removed is in this change.
+bug 335748 ECC support for Mozilla.
+https://bugzilla.mozilla.org/show_bug.cgi?id=335748
+https://github.com/ehsan/mozilla-cvs-history/commit/80afd702687e20643b183ca05e96236e8eb48a4e
+
+NSS is currently developed on mercurial, so prior change history was lost. The above github export contains all CVS changes, and shows where rrelyea%redhat.com checked in a copy of ecl-curve.h that was missing the parameters.
+
+ Julien Pierre rightly identified at 2006-06-26 17:31:28 PDT 
+
+> It looks like the other problem is that the tip's version of ecl-curve.h no longer has all the curves in it. I 
+> intensely dislike the solution chosen for the NSS 3.11/3.11.1 branches to have two different checkout points for 
+> this source file. If anything, that hack should be temporary, and should not be perpetuated to the trunk.
+
+Robert Relyea 2006-08-31 09:44:10 PDT
+
+> "Nope, mozilla is shipping with this."
+
+
+and we still have an NSS that cannot support anything other than suite-b until the params are restored.
+
+Mozilla Bugzilla Bug [Case of the missing curves in Firefox] (https://bugzilla.mozilla.org/show_bug.cgi?id=1117297)
+ 
 ## TL;DR ##
 
 NSS 3.17.3 contains a logic error that causes the 'ssl3_SuiteBOnly' function to always return TRUE -- it is testing for support for keys smaller than minimum allowed.
-Once this is patched, signature verification fails because all non-Suite-B curve parameters were stripped from the source (without comment or changehistory) in 2006.
+Once this is patched, signature verification fails because all non-Suite-B curve parameters were stripped from the source in 2006.
 On restoring the curve parameters file ecl-curve.h from NSS 3.11.1 (2006/02/28), firefox supports SECP256K1 and possibly more Prime Field curves without further modification.
 
 Patch for mozilla-central included.
@@ -355,7 +379,7 @@ Simply replacing the stubbed copy of ecl-curve.h from 3.17.3 with the populated 
 This build of firefox then successfully established an openssl session with s_server, and accepted and parsed the SECP256K1 EC pubkey,
 and validated the signature on the the ServerKeyExchange record. It was just like Firefox had always supported curves other than Suite-B.
 
-I couldn't find any reason why these curves were removed -- at least, why they went AWOL sometime between 28/02/2006 ~ 28/04/2006
+I couldn't find any reason why these curves were removed -- at least, why they went AWOL sometime between 28/02/2006 ~ 28/04/2006 [found, update above].
 
 Sun document PSARC/2007/446 from 07/13/2007 states
   
