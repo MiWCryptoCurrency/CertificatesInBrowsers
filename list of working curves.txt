@@ -1,0 +1,130 @@
+6/01/2015
+sharing curve over ECDHE and ECDSA on certificate sig no 
+with openssl s_server and firefox (nightly w/ curves readded)
+without NSS_ECC_MORE_THAN_SUITE_B=
+
+prime192v1 on https://localhost:8443	OK
+secp224r1 on https://localhost:8444	OK
+prime256v1 on https://localhost:8445	OK * SuiteB
+secp384r1 on https://localhost:8446	OK * SuiteB
+secp521r1 on https://localhost:8447	OK * SuiteB
+sect163k1 on https://localhost:8448	sec_error_bad_signature
+sect163r2 on https://localhost:8449	sec_error_bad_signature 
+sect233k1 on https://localhost:8450	sec_error_bad_signature 
+sect233r1 on https://localhost:8451	sec_error_bad_signature 
+sect283k1 on https://localhost:8452	sec_error_bad_signature 
+sect283r1 on https://localhost:8453	sec_error_bad_signature 
+sect409k1 on https://localhost:8454	sec_error_bad_signature 
+sect409r1 on https://localhost:8455	sec_error_bad_signature 
+sect571k1 on https://localhost:8456	sec_error_bad_signature 
+sect571r1 on https://localhost:8457	sec_error_bad_signature 
+prime239v2 on https://localhost:8458	ssl_error_no_cypher_overlap
+prime239v3 on https://localhost:8459	ssl_error_no_cypher_overlap
+c2tnb239v1 on https://localhost:8460	ssl_error_no_cypher_overlap
+c2tnb239v2 on https://localhost:8461	ssl_error_no_cypher_overlap
+c2tnb239v3 on https://localhost:8462	ssl_error_no_cypher_overlap
+c2pnb163v1 on https://localhost:8463	ssl_error_no_cypher_overlap
+c2pnb163v2 on https://localhost:8464	ssl_error_no_cypher_overlap
+c2pnb163v3 on https://localhost:8465	ssl_error_no_cypher_overlap
+c2pnb176v1 on https://localhost:8466	ssl_error_no_cypher_overlap
+c2tnb191v1 on https://localhost:8467	ssl_error_no_cypher_overlap
+c2tnb191v2 on https://localhost:8468	ssl_error_no_cypher_overlap
+c2tnb191v3 on https://localhost:8469	ssl_error_no_cypher_overlap
+c2tnb191v3 on https://localhost:8470	ssl_error_no_cypher_overlap
+c2tnb239v1 on https://localhost:8471	ssl_error_no_cypher_overlap
+c2tnb239v2 on https://localhost:8472	ssl_error_no_cypher_overlap
+c2tnb239v3 on https://localhost:8473	ssl_error_no_cypher_overlap
+c2pnb272w1 on https://localhost:8474	ssl_error_no_cypher_overlap
+c2pnb304w1 on https://localhost:8475	ssl_error_no_cypher_overlap
+c2tnb359v1 on https://localhost:8476	ssl_error_no_cypher_overlap
+c2pnb368w1 on https://localhost:8477	ssl_error_no_cypher_overlap
+c2tnb431r1 on https://localhost:8478	ssl_error_no_cypher_overlap
+secp112r1 on https://localhost:8479	ssl_error_no_cypher_overlap
+secp112r2 on https://localhost:8480	ssl_error_no_cypher_overlap
+secp128r1 on https://localhost:8481	ssl_error_no_cypher_overlap
+secp128r2 on https://localhost:8482	ssl_error_no_cypher_overlap
+secp160k1 on https://localhost:8483	OK
+secp160r1 on https://localhost:8484	OK
+secp160r2 on https://localhost:8485	OK
+secp192k1 on https://localhost:8486	OK
+secp224k1 on https://localhost:8487	OK
+secp256k1 on https://localhost:8488	OK	Bitcoin
+sect113r1 on https://localhost:8489	ssl_error_no_cypher_overlap
+sect113r2 on https://localhost:8490	ssl_error_no_cypher_overlap
+sect131r1 on https://localhost:8491	ssl_error_no_cypher_overlap
+sect131r2 on https://localhost:8492	ssl_error_no_cypher_overlap
+sect163r1 on https://localhost:8493	sec_error_bad_signature
+sect193r1 on https://localhost:8494	sec_error_bad_signature
+sect193r2 on https://localhost:8495	sec_error_bad_signature
+sect239k1 on https://localhost:8496	sec_error_bad_signature
+wap-wsg-idm-ecid-wtls1 on https://localhost:8497	ssl_error_no_cypher_overlap
+wap-wsg-idm-ecid-wtls8 on https://localhost:8498	ssl_error_no_cypher_overlap
+wap-wsg-idm-ecid-wtls9 on https://localhost:8499	ssl_error_no_cypher_overlap
+
+
+
+6/01/2015
+sharing curve over ECDHE and ECDSA on certificate sig no 
+with openssl s_server and firefox (nightly w/ curves readded)
+with NSS_ECC_MORE_THAN_SUITE_B=
+
+prime192v1 on https://localhost:8443	OK
+secp224r1 on https://localhost:8444	OK
+prime256v1 on https://localhost:8445	OK * SuiteB
+secp384r1 on https://localhost:8446	OK * SuiteB
+secp521r1 on https://localhost:8447	OK * SuiteB
+sect163k1 on https://localhost:8448	OK
+sect163r2 on https://localhost:8449	OK
+sect233k1 on https://localhost:8450	OK
+sect233r1 on https://localhost:8451	OK
+sect283k1 on https://localhost:8452	OK
+sect283r1 on https://localhost:8453	OK
+sect409k1 on https://localhost:8454	OK
+sect409r1 on https://localhost:8455	OK
+sect571k1 on https://localhost:8456	OK
+sect571r1 on https://localhost:8457	OK
+prime239v2 on https://localhost:8458	ssl_error_no_cypher_overlap
+prime239v3 on https://localhost:8459	ssl_error_no_cypher_overlap
+c2tnb239v1 on https://localhost:8460	ssl_error_no_cypher_overlap
+c2tnb239v2 on https://localhost:8461	ssl_error_no_cypher_overlap
+c2tnb239v3 on https://localhost:8462	ssl_error_no_cypher_overlap
+c2pnb163v1 on https://localhost:8463	ssl_error_no_cypher_overlap
+c2pnb163v2 on https://localhost:8464	ssl_error_no_cypher_overlap
+c2pnb163v3 on https://localhost:8465	ssl_error_no_cypher_overlap
+c2pnb176v1 on https://localhost:8466	ssl_error_no_cypher_overlap
+c2tnb191v1 on https://localhost:8467	ssl_error_no_cypher_overlap
+c2tnb191v2 on https://localhost:8468	ssl_error_no_cypher_overlap
+c2tnb191v3 on https://localhost:8469	ssl_error_no_cypher_overlap
+c2tnb191v3 on https://localhost:8470	ssl_error_no_cypher_overlap
+c2tnb239v1 on https://localhost:8471	ssl_error_no_cypher_overlap
+c2tnb239v2 on https://localhost:8472	ssl_error_no_cypher_overlap
+c2tnb239v3 on https://localhost:8473	ssl_error_no_cypher_overlap
+c2pnb272w1 on https://localhost:8474	ssl_error_no_cypher_overlap
+c2pnb304w1 on https://localhost:8475	ssl_error_no_cypher_overlap
+c2tnb359v1 on https://localhost:8476	ssl_error_no_cypher_overlap
+c2pnb368w1 on https://localhost:8477	ssl_error_no_cypher_overlap
+c2tnb431r1 on https://localhost:8478	ssl_error_no_cypher_overlap
+secp112r1 on https://localhost:8479	ssl_error_no_cypher_overlap
+secp112r2 on https://localhost:8480	ssl_error_no_cypher_overlap
+secp128r1 on https://localhost:8481	ssl_error_no_cypher_overlap
+secp128r2 on https://localhost:8482	ssl_error_no_cypher_overlap
+secp160k1 on https://localhost:8483	OK
+secp160r1 on https://localhost:8484	OK
+secp160r2 on https://localhost:8485	OK
+secp192k1 on https://localhost:8486	OK
+secp224k1 on https://localhost:8487	OK
+secp256k1 on https://localhost:8488	OK	Bitcoin
+sect113r1 on https://localhost:8489	ssl_error_no_cypher_overlap
+sect113r2 on https://localhost:8490	ssl_error_no_cypher_overlap
+sect131r1 on https://localhost:8491	ssl_error_no_cypher_overlap
+sect131r2 on https://localhost:8492	ssl_error_no_cypher_overlap
+sect163r1 on https://localhost:8493	sec_error_bad_signature
+sect193r1 on https://localhost:8494	sec_error_bad_signature
+sect193r2 on https://localhost:8495	sec_error_bad_signature
+sect239k1 on https://localhost:8496	OK
+wap-wsg-idm-ecid-wtls1 on https://localhost:8497	ssl_error_no_cypher_overlap
+wap-wsg-idm-ecid-wtls8 on https://localhost:8498	ssl_error_no_cypher_overlap
+wap-wsg-idm-ecid-wtls9 on https://localhost:8499	ssl_error_no_cypher_overlap
+
+
+
